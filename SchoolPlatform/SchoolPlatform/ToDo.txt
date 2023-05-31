@@ -1,0 +1,4 @@
+﻿LEFT TO DO
+************
+In Admin:
++Update ListView cand se adauga/sterge

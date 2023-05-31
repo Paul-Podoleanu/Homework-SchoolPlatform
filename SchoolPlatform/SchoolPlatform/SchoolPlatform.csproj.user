@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\Admin\AdminEditSubjectsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\AdminManageClassesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\AdminEditTeachersView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\AdminEditTeacherWindowView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\AdminEditStudentWindowView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\AdminEditStudentsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Admin\AdminMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Student\StudentAbsencesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Student\StudentCoursesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Student\StudentGradesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\DiriginteAbsencesStudentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\DiriginteGradeAverageView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\DiriginteMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\DiriginteStundentAbsenceWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\TeacherEditCourseWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\TeacherMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\TeacherManageAbsenceView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\TeacherManageGradesView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Teacher\TeacherManageSubjectsView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ButtonStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\UIColors.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminEditSubjectsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminManageClassesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminEditTeachersView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminEditTeacherWindowView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminEditStudentWindowView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminEditStudentsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Admin\AdminMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Student\StudentAbsencesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Student\StudentCoursesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Student\StudentGradesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\DiriginteAbsencesStudentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\DiriginteGradeAverageView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\DiriginteMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\DiriginteStundentAbsenceWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\TeacherEditCourseWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\TeacherMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\TeacherManageAbsenceView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\TeacherManageGradesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Teacher\TeacherManageSubjectsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

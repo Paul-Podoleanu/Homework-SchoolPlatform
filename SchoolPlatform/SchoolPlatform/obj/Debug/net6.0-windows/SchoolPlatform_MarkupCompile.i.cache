@@ -1,0 +1,20 @@
+﻿SchoolPlatform
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\podol\Desktop\MVP Tema3\SchoolPlatform\SchoolPlatform\obj\Debug\net6.0-windows\
+SchoolPlatform
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+C:\Users\podol\Desktop\MVP Tema3\SchoolPlatform\SchoolPlatform\App.xaml
+25278924815
+
+57-167604018
+2381859428469
+CustomControls\BindablePasswordBox.xaml;MainWindow.xaml;Styles\ButtonStyles.xaml;Styles\UIColors.xaml;View\Admin\AdminEditStudentsView.xaml;View\Admin\AdminEditStudentWindowView.xaml;View\Admin\AdminEditSubjectsView.xaml;View\Admin\AdminEditTeachersView.xaml;View\Admin\AdminEditTeacherWindowView.xaml;View\Admin\AdminMainView.xaml;View\Admin\AdminManageClassesView.xaml;View\LoginView.xaml;View\Student\StudentAbsencesView.xaml;View\Student\StudentCoursesView.xaml;View\Student\StudentGradesView.xaml;View\Student\StudentMainView.xaml;View\Teacher\DiriginteAbsencesStudentView.xaml;View\Teacher\DiriginteGradeAverageView.xaml;View\Teacher\DiriginteMainView.xaml;View\Teacher\DiriginteStundentAbsenceWindow.xaml;View\Teacher\TeacherEditCourseWindow.xaml;View\Teacher\TeacherMainView.xaml;View\Teacher\TeacherManageAbsenceView.xaml;View\Teacher\TeacherManageGradesView.xaml;View\Teacher\TeacherManageSubjectsView.xaml;
+
+False
+

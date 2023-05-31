@@ -1,0 +1,244 @@
+﻿<UserControl x:Class="SchoolPlatform.View.TeacherManageSubjectsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:SchoolPlatform.ViewModel"
+             xmlns:local="clr-namespace:SchoolPlatform.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Subject List-->
+        <StackPanel Orientation="Horizontal" Height="27" 
+                    VerticalAlignment="Top"
+                    Grid.Row="0"
+                    Grid.Column="0">
+            <fa:IconImage Icon="Paperclip"  Style="{StaticResource menuButtonIcon}" Foreground="White" Height="21" Width="21"/>
+            <TextBlock Text="Subject List" Foreground="White"
+                   FontSize="16" Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <DataGrid Name="subjectList" SelectionMode="Single" 
+                 Width="300" HorizontalAlignment="Center" 
+                 ItemsSource="{Binding OBSubjects, Mode=OneWay}"
+                  AutoGenerateColumns="False" Margin="0,32,0,0"
+                  IsReadOnly="True">
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <!--Course List-->
+        <StackPanel Grid.Row="1" Grid.Column="0" 
+                     Orientation="Horizontal"
+                     VerticalAlignment="Top"
+                    Margin="0,20,0,0">
+            <fa:IconImage Icon="File"  Style="{StaticResource menuButtonIcon}" Foreground="White" Height="21" Width="21"/>
+            <TextBlock Text="Course List" Foreground="White"
+                   FontSize="16" Margin="0,0,0,4"/>
+        </StackPanel>
+
+        <DataGrid Name="courseList" SelectionMode="Single" 
+                 Width="300" HorizontalAlignment="Center" 
+                 ItemsSource="{Binding OBCourses, Mode=OneWay}"
+                  AutoGenerateColumns="False" Margin="0,50,0,0"
+                  IsReadOnly="True"
+                  Grid.Column="0" Grid.Row="1">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <!--Course Edit Zone-->
+        <StackPanel Grid.Row="0" Grid.Column="1" Margin="0,0,0,0">
+            <StackPanel x:Name="AddCoursePanel" Margin="0,0,0,20">
+                <!--Text StackPanel-->
+                <StackPanel Orientation="Horizontal">
+                    <fa:IconImage Icon="PlusSquare" Style="{StaticResource menuButtonIcon}" Foreground="White"/>
+                    <TextBlock Text="Add Course" Foreground="White"
+                           FontSize="16"/>
+                </StackPanel>
+
+                <!--Course Name-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Foreground="White"
+                           FontSize="16" Margin="45,5,0,0"/>
+                    <TextBox x:Name="courseNameBox"
+                         Width="100" Margin="10"/>
+                </StackPanel>
+
+                <!--Course Subject-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Subject" Foreground="White"
+                           FontSize="16" Margin="35,5,0,0"/>
+                    <TextBox x:Name="courseSubjectNameBox"
+                         Width="100" Margin="10"/>
+                </StackPanel>
+
+
+                <!--Add Course Button-->
+                <Button x:Name="btnAddCourse"                          
+                            Content="ADD"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Click="btnAddCourse_Click"
+                            HorizontalAlignment="Left"
+                            Margin="35,0,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#19A7CE"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="70" Height="30"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+
+            <!--Delete Course-->
+            <StackPanel x:Name="DeleteCoursePanel">
+                <!--Text StackPanel-->
+                <StackPanel Orientation="Horizontal">
+                    <fa:IconImage Icon="MinusSquare" Style="{StaticResource menuButtonIcon}" Foreground="White"/>
+                    <TextBlock Text="Delete Course" Foreground="White"
+                           FontSize="16"/>
+                </StackPanel>
+
+                <!--Course Name-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Foreground="White"
+                           FontSize="16" Margin="45,5,0,0"/>
+                    <TextBox x:Name="courseDeleteNameBox"
+                         Width="100" Margin="10"/>
+                </StackPanel>
+                <!--Add Course Button-->
+                <Button x:Name="btnDeleteCourse"                          
+                            Content="DELETE"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Click="btnDeleteCourse_Click"
+                            HorizontalAlignment="Left"
+                            Margin="35,0,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#19A7CE"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="70" Height="30"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+
+
+        </StackPanel>
+
+        <!--Edit Course-->
+
+        <StackPanel Grid.Row="0" Grid.Column="2" Margin="0,0,0,0">
+            <StackPanel x:Name="EditCoursePanel" Margin="0,0,0,20">
+                <!--Text StackPanel-->
+                <StackPanel Orientation="Horizontal">
+                    <fa:IconImage Icon="Pen" Style="{StaticResource menuButtonIcon}" Foreground="White"/>
+                    <TextBlock Text="Edit Course" Foreground="White"
+                           FontSize="16"/>
+                </StackPanel>
+
+                <!--Course Name-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Name" Foreground="White"
+                           FontSize="16" Margin="45,5,0,0"/>
+                    <TextBox x:Name="courseNameEditBox"
+                         Width="100" Margin="10"/>
+                </StackPanel>
+
+                <!--Course Subject-->
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Subject" Foreground="White"
+                           FontSize="16" Margin="35,5,0,0"/>
+                    <TextBox x:Name="courseSubjectEditNameBox"
+                         Width="100" Margin="10"/>
+                </StackPanel>
+               
+
+                <!--Add Course Button-->
+                <Button x:Name="btnEditCourse"                          
+                            Content="EDIT"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Click="btnEditCourse_Click"
+                            HorizontalAlignment="Left"
+                            Margin="35,0,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#19A7CE"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="70" Height="30"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

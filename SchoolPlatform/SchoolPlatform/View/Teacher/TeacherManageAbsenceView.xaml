@@ -1,0 +1,170 @@
+﻿<UserControl x:Class="SchoolPlatform.View.TeacherManageAbsenceView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:SchoolPlatform.ViewModel"
+             xmlns:local="clr-namespace:SchoolPlatform.View" xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--Student List-->
+        <StackPanel Orientation="Horizontal" Height="27" VerticalAlignment="Top">
+            <fa:IconImage Icon="UserFriends"  Style="{StaticResource menuButtonIcon}" Foreground="White" Height="21" Width="21"/>
+            <TextBlock Text="Student List" Foreground="White"
+                   FontSize="16" Margin="0,4,0,0"/>
+        </StackPanel>
+
+        <DataGrid Name="studentList" SelectionMode="Single" 
+                 Width="350" HorizontalAlignment="Center" 
+                 ItemsSource="{Binding OBStudents, Mode=OneWay}"
+                  AutoGenerateColumns="False" Margin="0,32,0,250"
+                  IsReadOnly="True">
+
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="First Name" Binding="{Binding Prenume}"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Nume}"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding User.Username}"/>
+                <DataGridTextColumn Header="Class" Binding="{Binding Class.Name}" Width="*" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <DataGrid Name="gradeList" SelectionMode="Single" 
+                 Width="350" HorizontalAlignment="Center" 
+                 ItemsSource="{Binding OBAbsences, Mode=OneWay}"
+                  AutoGenerateColumns="False" Margin="0,255,0,0"
+                  IsReadOnly="True">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" Width="30"/>
+                <DataGridTextColumn Header="Subject" Binding="{Binding Subject.Name}" Width="*"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding Student.Prenume}" Width="*"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Student.Nume}" Width="*"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Student.User.Username}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!--Grade Management-->
+        <StackPanel Grid.Column="1">
+
+            <!--Add Absence-->
+            <StackPanel x:Name="AddGradePanel" Margin="0,0,0,20">
+                <!--Text StackPanel-->
+                <StackPanel Orientation="Horizontal">
+                    <fa:IconImage Icon="FilePen" Style="{StaticResource menuButtonIcon}" Foreground="White"/>
+                    <TextBlock Text="Add Absence" Foreground="White"
+                           FontSize="16"/>
+                </StackPanel>
+
+                <!--Student Username-->
+                <StackPanel Orientation="Horizontal" Margin="35,10,0,0">
+                    <TextBlock Text="Username" Foreground="White"
+                           FontSize="16" />
+                    <TextBox Name="StudentUsername" Width="150" FontSize="16" Margin="20,0,0,0"/>
+
+                </StackPanel>
+
+                <!--Subject-->
+                <StackPanel Orientation="Horizontal" Margin="35,10,0,0">
+                    <TextBlock Text="Subject" Foreground="White"
+                           FontSize="16" />
+                    <TextBox Name="SubjectAddBox" Width="150" FontSize="16" Margin="39,0,0,0"/>
+
+                </StackPanel>
+
+                <!--Add Student Button-->
+                <Button x:Name="btnAdd"                          
+                            Content="ADD"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Click="btnAdd_Click"
+                            HorizontalAlignment="Left"
+                            Margin="35,10,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#19A7CE"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="70" Height="30"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+
+
+            <!--Remove Absence-->
+            <StackPanel x:Name="RemoveGradePanel" Margin="0,0,0,20">
+                <!--Text StackPanel-->
+                <StackPanel Orientation="Horizontal">
+                    <fa:IconImage Icon="FilePen" Style="{StaticResource menuButtonIcon}" Foreground="White"/>
+                    <TextBlock Text="Remove Absence" Foreground="White"
+                           FontSize="16"/>
+                </StackPanel>
+
+
+                <!--Grade Id-->
+                <StackPanel Orientation="Horizontal" Margin="35,10,0,0">
+                    <TextBlock Text="Id Absence" Foreground="White"
+                           FontSize="16" />
+                    <TextBox Name="IdRemoveBox" Width="150" FontSize="16" Margin="30,0,0,0"/>
+
+                </StackPanel>
+
+                <!--Remove Grade Button-->
+                <Button x:Name="btnRemove"                          
+                            Content="REMOVE"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"                           
+                            Click="btnRemove_Click"
+                            HorizontalAlignment="Left"
+                            Margin="35,10,0,0">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#19A7CE"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#28AEED"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="70" Height="30"
+                                        CornerRadius="10"
+                                        Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>
